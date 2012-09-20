@@ -1,8 +1,10 @@
 #!/opt/local/bin/ruby
+require 'Scraper'
 
 class IndeedScraper < Scraper
   
   def initialize base_url,search_params
+    super
     @res_xpath = {
       :row          => "div[@class='row ']",
       :job_url      => "h2/a",
@@ -10,8 +12,7 @@ class IndeedScraper < Scraper
       :job_company  => "span[@class='company']",
       :job_location => "span[@class='location']/span"
     }
-    super.initialize base_url,search_params
-    @param_format="q=#{@search_params['keyword']}&l=#{@search_params['location']}&sort=#{@search_params['sort_by']}"
+    @param_format = "q=#{@search_params['keyword']}&l=#{@search_params['location']}&sort=#{@search_params['sort_by']}"
     @url = build_url
   end
   
