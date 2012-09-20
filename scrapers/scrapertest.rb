@@ -7,7 +7,7 @@ search_params = {
   'sort_by'  => 'date'
 }
 
-s = IndeedScraper.new('http://www.indeed.com/jobs?',search_params )
+s = IndeedScraper.new(search_params )
 
 s.scrape
 res = s.results

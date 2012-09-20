@@ -4,14 +4,14 @@ require 'nokogiri'
 require 'open-uri'
 
 # Things that must be overloaded to make use of this class:
-# Instance vars: @res_xpath, @param_format,
+# instance vars: @base_url, @param_format, @res_xpath 
 # methods: format_result_url, format_result_title, format_result_company, format_result_location
 
 class Scraper
   attr_accessor :search_params
   attr_accessor :results
   
-  def initialize base_url,search_params
+  def initialize search_params
     @res_xpath = {
       :row          => nil,
       :job_url      => nil,
@@ -20,7 +20,7 @@ class Scraper
       :job_location => nil
     }
     @param_format = nil
-    @base_url = base_url
+    @base_url = nil
     @search_params = search_params
   end
   
