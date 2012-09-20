@@ -1,5 +1,5 @@
 #!/opt/local/bin/ruby
-require 'IndeedScraper'
+require 'scrapers/indeedscraper'
 
 search_params = {
   'keyword'  => 'linux',
