@@ -13,7 +13,6 @@ class IndeedScraper < Scraper
       :job_location => "span[@class='location']/span"
     }
     @param_format = "q=#{@search_params['keyword']}&l=#{@search_params['location']}&sort=#{@search_params['sort_by']}"
-    @url = build_url
   end
   
   def format_result_url row
@@ -31,6 +30,5 @@ class IndeedScraper < Scraper
   def format_result_location row
     return (row/"#{@res_xpath[:job_location]}").text.strip
   end
-  
   
 end

@@ -9,8 +9,8 @@ search_params = {
 
 s = IndeedScraper.new('http://www.indeed.com/jobs?',search_params )
 
-#puts s.scrape
-res = s.get_results
+s.scrape
+res = s.results
 puts "Found #{res.length} jobs."
 puts res[0][:job_url]
 puts res[0][:job_title]
