@@ -1,5 +1,5 @@
-#!/opt/local/bin/ruby
-require 'scrapers/indeedscraper'
+
+require '../scrapers/indeed_scraper'
 
 search_params = {
   'keyword'  => 'linux',
@@ -12,7 +12,10 @@ s = IndeedScraper.new(search_params )
 s.scrape
 res = s.results
 puts "Found #{res.length} jobs."
-puts res[0][:job_url]
-puts res[0][:job_title]
-puts res[0][:job_company]
-puts res[0][:job_location]
+res.each do |r|
+    puts r[:job_url]
+    puts r[:job_title]
+    puts r[:job_company]
+    puts r[:job_location]
+    puts "\n"
+end

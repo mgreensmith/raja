@@ -1,13 +1,13 @@
-#!/opt/local/bin/ruby
-require 'scrapers/silicon_forest_scraper'
+
+require '../scrapers/dice_scraper'
 
 search_params = {
-  'keyword'  => '',
-  'location' => '',
-  'sort_by'  => ''
+  'keyword'  => 'linux',
+  'location' => 'Portland,+Or',
+  'sort_by'  => 'date'
 }
 
-s = SiliconFloristScraper.new(search_params )
+s = DiceScraper.new(search_params )
 
 s.scrape
 res = s.results
