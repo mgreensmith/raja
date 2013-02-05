@@ -1,3 +1,4 @@
+
 require '../scrapers/craigslist_scraper'
 
 search_params = {

@@ -1,5 +1,5 @@
 
-require '../scrapers/indeed_scraper'
+require 'scrapers/indeed_scraper'
 
 search_params = {
   'keyword'  => 'linux',
