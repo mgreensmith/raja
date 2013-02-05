@@ -1,4 +1,4 @@
-#!/opt/local/bin/ruby
+
 require 'scrapers/scraper'
 
 class DiceScraper < Scraper

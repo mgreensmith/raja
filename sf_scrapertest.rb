@@ -1,13 +1,13 @@
 #!/opt/local/bin/ruby
-require 'scrapers/dicescraper'
+require 'scrapers/silicon_forest_scraper'
 
 search_params = {
-  'keyword'  => 'linux',
-  'location' => 'Portland,+Or',
-  'sort_by'  => 'date'
+  'keyword'  => '',
+  'location' => '',
+  'sort_by'  => ''
 }
 
-s = DiceScraper.new(search_params )
+s = SiliconFloristScraper.new(search_params )
 
 s.scrape
 res = s.results
@@ -17,4 +17,5 @@ res.each do |r|
     puts r[:job_title]
     puts r[:job_company]
     puts r[:job_location]
+    puts "\n"
 end
